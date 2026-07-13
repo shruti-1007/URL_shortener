@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shortly Cute - URL Shortener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape shape-one"></div>
+  <div class="bg-shape shape-two"></div>
+
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Sweet & simple links</p>
+      <h1>URL Shortener</h1>
+      <p class="subtitle">Turn long links into tiny, shareable cuties in one click.</p>
+    </header>
+
+    <section class="card" aria-labelledby="shorten-title">
+      <h2 id="shorten-title">Shorten a URL</h2>
+      <form id="shorten-form" class="stack">
+        <label for="long-url">Long URL</label>
+        <input id="long-url" name="url" type="url" placeholder="https://example.com/my-very-long-link" required />
+        <button type="submit">Make It Tiny</button>
+      </form>
+
+      <div id="result" class="result hidden" aria-live="polite">
+        <p class="label">Your short URL</p>
+        <a id="short-link" href="#" target="_blank" rel="noopener noreferrer"></a>
+        <button id="copy-btn" type="button" class="ghost">Copy Link</button>
+      </div>
+
+      <p id="status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card" aria-labelledby="analytics-title">
+      <h2 id="analytics-title">Check Analytics</h2>
+      <form id="analytics-form" class="stack">
+        <label for="short-id">Short ID or Short URL</label>
+        <input id="short-id" name="shortId" type="text" minlength="2" placeholder="e.g. AbC123xY or http://localhost:3000/AbC123xY" required />
+        <button type="submit">View Clicks</button>
+      </form>
+      <p id="analytics-status" class="status" aria-live="polite"></p>
+      <div id="analytics-box" class="analytics hidden">
+        <p>Total clicks: <strong id="click-count">0</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

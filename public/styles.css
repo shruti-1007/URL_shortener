@@ -1,0 +1,264 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#f8e5db;
+    --card:#fff8f3;
+    --border:#9b5b3d;
+    --pink:#f6cfc7;
+    --blue:#dbe8f7;
+    --orange:#ffd8bf;
+    --text:#6c4432;
+}
+
+body{
+    font-family:"Baloo 2",cursive;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:50px 20px;
+    position:relative;
+}
+
+/* subtle grid */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(255,255,255,.18) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.18) 1px,transparent 1px);
+    background-size:40px 40px;
+    z-index:-2;
+}
+
+/* little decorations */
+
+body::after{
+    content:"✦   ☁   ♡   ✦   ☁";
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:20px;
+    letter-spacing:25px;
+    color:#d78970;
+}
+
+.bg-shape{
+    display:none;
+}
+
+.page{
+    width:min(900px,100%);
+    background:var(--card);
+    border:2px solid var(--border);
+    padding:35px;
+    position:relative;
+}
+
+/* fake browser top */
+
+.page::before{
+    content:"Shortly.exe";
+    position:absolute;
+    left:-2px;
+    right:-2px;
+    top:-38px;
+    height:38px;
+    background:var(--blue);
+    border:2px solid var(--border);
+    display:flex;
+    align-items:center;
+    padding-left:15px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.hero{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.eyebrow{
+    display:inline-block;
+    background:var(--pink);
+    border:2px solid var(--border);
+    padding:4px 12px;
+    font-size:.9rem;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    max-width:550px;
+    margin:auto;
+    font-size:1.1rem;
+}
+
+.card{
+    margin-top:30px;
+    padding:25px;
+    border:2px solid var(--border);
+    background:white;
+    position:relative;
+}
+
+.card:nth-of-type(1)::before{
+    content:"♡";
+    position:absolute;
+    top:-15px;
+    left:20px;
+    background:var(--card);
+    padding:0 8px;
+    font-size:22px;
+}
+
+.card:nth-of-type(2)::before{
+    content:"✦";
+    position:absolute;
+    top:-15px;
+    left:20px;
+    background:var(--card);
+    padding:0 8px;
+    font-size:20px;
+}
+
+h2{
+    margin-bottom:18px;
+    font-size:1.6rem;
+}
+
+.stack{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:2px solid var(--border);
+    background:#fffdfb;
+    font-family:inherit;
+    font-size:1rem;
+    outline:none;
+}
+
+input:focus{
+    background:#fff3ed;
+}
+
+button{
+    cursor:pointer;
+    border:2px solid var(--border);
+    background:var(--orange);
+    color:var(--text);
+    font-family:inherit;
+    font-size:1rem;
+    font-weight:bold;
+    padding:12px;
+    transition:.2s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    background:#ffd0ae;
+}
+
+.ghost{
+    background:var(--blue);
+}
+
+.ghost:hover{
+    background:#cfdff3;
+}
+
+.result{
+    margin-top:25px;
+    border:2px dashed var(--border);
+    padding:18px;
+    background:#fffaf7;
+    text-align:center;
+}
+
+.result a{
+    color:#a35334;
+    font-weight:bold;
+    text-decoration:none;
+    word-break:break-word;
+}
+
+.label{
+    margin-bottom:8px;
+}
+
+.status{
+    margin-top:15px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.analytics{
+    margin-top:20px;
+    border:2px dashed var(--border);
+    background:#fffaf7;
+    padding:20px;
+    text-align:center;
+    font-size:1.1rem;
+}
+
+.hidden{
+    display:none;
+}
+
+/* tiny decorative icons */
+
+.hero::after{
+    content:"☁      ♡      ☁";
+    display:block;
+    margin-top:20px;
+    color:#d58a72;
+    letter-spacing:30px;
+    font-size:20px;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    width:16px;
+    height:16px;
+    border:2px solid var(--border);
+    background:var(--pink);
+    top:12px;
+    right:12px;
+}
+
+@media(max-width:700px){
+
+.page{
+    padding:22px;
+}
+
+.hero h1{
+    font-size:2.2rem;
+}
+
+.page::before{
+    font-size:.9rem;
+}
+}
